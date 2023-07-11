@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+
+}
+
+canvas#canvas {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .8;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #B62C46;
+}
+
+
+.title-end {
+    margin-left: .5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2474C3;
+}
+
+.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.top-container {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 1rem;
+    width: 80%;
+}
+
+.middle-container {
+    position: absolute;
+    top: 0;
+    margin-top: 10rem;
+    width: 80%;
+    font-size: 4rem;
+    display: flex;
+}
+
+.main-title {
+    width: 65%;
+    font-weight: 800;
+    font-size: 3.5rem;
+    margin-left: 5rem;
+}
+
+.logo {
+    background: url(logo.svg) no-repeat center center;
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.title-logo {
+    background: url(logo.svg) no-repeat center center;
+    width: 200px;
+    height: 150px;
+}
+
+canvas#logo-canvas {
+
+    height: 150px;
+    width: 200px;
+}
+
+
+.content-padding {
+    padding-top: 100vh;
+}
+
+.content-section {
+    height: 100vh;
+    background: url(background1.svg) no-repeat center center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+.help-section {
+    margin-top: 100vh;
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+}
+
+.credentials-section {
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightskyblue;
+}
+
+.projects-section {
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+}
+
+.contact-section {
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightcyan;
+}
+
+.help-section-container {
+    width: 80%;
+}
+
+.credentials-section-container {
+    width: 80%;
+}
+
+.projects-section-container {
+    width: 80%;
+}
+
+.contact-section-container {
+    width: 80%;
+}
