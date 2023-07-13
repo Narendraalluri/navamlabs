@@ -38,13 +38,15 @@ canvas#canvas {
 }
 
 .top-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
-    width: 80%;
+    width: 100%;
+    z-index: 2;
+    overflow: hidden;
+
 }
 
 .middle-container {
@@ -147,4 +149,72 @@ canvas#logo-canvas {
 
 .contact-section-container {
     width: 80%;
+}
+
+.glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* border-radius: 20px; */
+    /* border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
+}
+
+.non-glass {
+    background: linear-gradient(to right top, #F2EFF9, #dff3ff);
+}
+
+
+.header-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    margin-left: 2rem;
+    position: relative;
+    top: 3rem;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+}
+
+.header-actions>div {
+    color: rebeccapurple;
+    font-weight: 600;
+}
+
+.logo-slide {
+    animation-duration: 1s;
+    animation-name: logoSlide;
+    animation-fill-mode: forwards;
+}
+
+.logo-slide-reverse {
+    animation-duration: 1s;
+    animation-name: logoSlideReverse;
+    animation-fill-mode: forwards;
+}
+
+@keyframes logoSlide {
+    0% {
+        top: 3rem;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes logoSlideReverse {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 3rem;
+    }
 }

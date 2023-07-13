@@ -22,50 +22,55 @@
 </head>
 
 <body>
-    <div class="canvas-container">
+    <section class="canvas-container">
         <canvas id="canvas">
         </canvas>
-
-    </div>
+    </section>
 
     <div class="layout">
-        <div class="help-section">
+        <section class="help-section">
             <div class="help-section-container">
                 HOW CAN WE HELP
             </div>
-        </div>
-        <div class="credentials-section">
+        </section>
+        <section class="credentials-section">
             <div class="credentials-section-container">
                 Credentials
             </div>
-        </div>
-        <div class="projects-section">
+        </section>
+        <section class="projects-section">
             <div class="projects-section-container">
                 Sample projects
             </div>
-        </div>
-        <div class="contact-section">
+        </section>
+        <section class="contact-section">
             <div class="contact-section-container">
                 Contact US
             </div>
-        </div>
-        <div class="top-container">
-            <div class="logo"></div>
-            <div class="title">NAVAM</div>
-            <div class="title-end">LABS</div>
-        </div>
-        <div class="middle-container">
+        </section>
+        <section class="top-container glass">
+            <div class="header-logo">
+                <div class="logo"></div>
+                <div class="title">NAVAM</div>
+                <div class="title-end">LABS</div>
+            </div>
+            <div class="header-actions">
+                <div>About us</div>
+                <div>Projects</div>
+                <div>Contact</div>
+            </div>
+
+        </section>
+        <section class="middle-container">
             <canvas id="logo-canvas">
             </canvas>
             <div class="main-title">
                 Empowering Businesses with Expert
                 Consulting
             </div>
-        </div>
+        </section>
 
     </div>
-
-
 </body>
 
 <script>
@@ -96,6 +101,49 @@
             r1.resizeDrawingSurfaceToCanvas();
         }
     });
+
+    let sectionsEles = document.querySelectorAll("section");
+
+    let options = {
+        root: null,
+        rootMargin: "-100px",
+        // threshold: 1.0,
+    };
+
+    let headerLogoEle = document.querySelector(".header-logo");
+    let topContainerEle = document.querySelector(".top-container");
+
+    function logoSlideIn() {
+        headerLogoEle.classList.add('logo-slide')
+        headerLogoEle.classList.remove('logo-slide-reverse')
+        topContainerEle.classList.add('non-glass')
+        topContainerEle.classList.remove('glass')
+    }
+
+    function logoSlideOut() {
+        headerLogoEle.classList.remove('logo-slide')
+        headerLogoEle.classList.add('logo-slide-reverse')
+        topContainerEle.classList.remove('non-glass')
+        topContainerEle.classList.add('glass')
+    }
+
+
+    let callback = (entries, observer) => {
+        entries.forEach((entry) => {
+
+            if (entry.target.classList[0] == 'middle-container' && !entry.isIntersecting) {
+                logoSlideIn()
+            }
+
+            if (entry.target.classList[0] == 'middle-container' && entry.isIntersecting && document.querySelector(".header-logo").classList.contains('logo-slide')) {
+                logoSlideOut()
+            }
+        });
+    }
+
+    let observer = new IntersectionObserver(callback, options);
+    sectionsEles.forEach(sectionsEle => observer.observe(sectionsEle));
+
 </script>
 
 </html>
