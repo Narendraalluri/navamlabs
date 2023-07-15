@@ -114,7 +114,7 @@ canvas#logo-canvas {
 
 .help-section {
     margin-top: 100vh;
-    height: 20rem;
+    height: 30rem;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -151,6 +151,15 @@ canvas#logo-canvas {
 
 .help-section-container {
     width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.help-section-icon {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .credentials-section-container {
