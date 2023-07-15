@@ -30,7 +30,9 @@
     <div class="layout">
         <section class="help-section">
             <div class="help-section-container">
-                HOW CAN WE HELP
+                <img width="100px" src="icons/api.svg">
+                <img width="100px" src="icons/microservices.svg">
+                <img width="100px" src="icons/cloud_development.svg">
             </div>
         </section>
         <section class="credentials-section">
@@ -50,25 +52,20 @@
         </section>
         <section class="top-container glass">
             <div class="header-logo">
-                <div class="logo"></div>
-                <div class="title">NAVAM</div>
-                <div class="title-end">LABS</div>
+                <div class="header-logo-title">
+                    <img width="300px" height="50px" src="icons/top_title.svg">
+                </div>
             </div>
             <div class="header-actions">
                 <div>About us</div>
                 <div>Projects</div>
                 <div>Contact</div>
             </div>
-
         </section>
         <section class="middle-container">
             <div class="">
                 <canvas id="logo-canvas">
                 </canvas>
-                <div class="logo-name">
-                    <span class="title-navam">NAVAM</span>
-                    <span class="title-labs"> LABS</span>
-                </div>
             </div>
 
             <div class="main-title">
@@ -82,7 +79,7 @@
 
 <script>
     const r = new rive.Rive({
-        src: "background_wave_anim.riv",
+        src: "rive/background_wave_anim.riv",
         canvas: document.getElementById("canvas"),
         autoplay: true,
         layout: new rive.Layout({
@@ -96,7 +93,7 @@
     });
 
     const r1 = new rive.Rive({
-        src: "logo_anim.riv",
+        src: "rive/logo_anim.riv",
         canvas: document.getElementById("logo-canvas"),
         autoplay: true,
         layout: new rive.Layout({

@@ -80,14 +80,14 @@ canvas#canvas {
 }
 
 .logo {
-    background: url(logo.svg) no-repeat center center;
+    background: url(icons/logo.svg) no-repeat center center;
     width: 50px;
     height: 50px;
     margin-right: 1rem;
 }
 
 .title-logo {
-    background: url(logo.svg) no-repeat center center;
+    background: url(icons/logo.svg) no-repeat center center;
     width: 200px;
     height: 150px;
 }
@@ -105,7 +105,7 @@ canvas#logo-canvas {
 
 .content-section {
     height: 100vh;
-    background: url(background1.svg) no-repeat center center;
+    background: url(icons/background1.svg) no-repeat center center;
     background-size: cover;
     width: 100vw;
     height: 100vh;
@@ -231,4 +231,8 @@ canvas#logo-canvas {
     100% {
         top: 3rem;
     }
+}
+
+.header-logo-title {
+    margin-left: 2rem;
 }
