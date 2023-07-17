@@ -112,33 +112,9 @@ canvas#logo-canvas {
     background-attachment: fixed;
 }
 
-.help-section {
-    margin-top: 100vh;
-    height: 30rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: lightblue;
-}
 
-.credentials-section {
-    height: 20rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: lightskyblue;
-}
 
-.projects-section {
-    height: 20rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: lightblue;
-}
+
 
 .contact-section {
     height: 20rem;
@@ -149,29 +125,93 @@ canvas#logo-canvas {
     background-color: lightcyan;
 }
 
+
+.help-section {
+    margin-top: 100vh;
+    width: 100%;
+}
+
 .help-section-container {
-    width: 80%;
+    margin: 2rem;
+    display: flex;
+    height: 25rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 2rem;
+    background-color: lightblue;
+    border: 1px solid lightblue;
+
+}
+
+.help-section-text-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.help-section-canvas-container {
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border-right: 1px solid black;
 }
 
 .help-section-icon {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: .8rem;
+    margin-bottom: .8rem;
+}
+
+
+.credentials-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .credentials-section-container {
-    width: 80%;
+    margin: 2rem;
+    display: flex;
+    height: 25rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 2rem;
+    width: 100%;
+    background-color: lightskyblue;
+
+}
+
+.projects-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .projects-section-container {
-    width: 80%;
+    margin: 2rem;
+    display: flex;
+    height: 25rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 2rem;
+    width: 100%;
+    background-color: lightblue;
 }
 
 .contact-section-container {
-    width: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .glass {
