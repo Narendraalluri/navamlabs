@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="index.css">
     <title>NAVAM</title>
     <script src="lib/rive-canvas.js"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -31,21 +30,24 @@
         <section class="help-section">
             <div class="help-section-container">
                 <div class="help-section-canvas-container">
-                    <div class="help-section-icon">
-                        <img width="80px" src="icons/api.svg">
-                    </div>
-                    <div class="help-section-icon">
-                        <img width="80px" src="icons/microservices.svg">
-                    </div>
-                    <div class="help-section-icon">
-                        <img width="80px" src="icons/cloud_development.svg">
-                    </div>
-                    <div class="help-section-icon">
-                        <img width="80px" src="icons/responsiveui.svg">
-                    </div>
+                    <canvas id="api-canvas">
+                    </canvas>
                 </div>
                 <div class="help-section-text-container">
-                    text
+                    <div class="feature-section-title">
+                        API Design and Development
+                    </div>
+                    <div class="feature-section-items">
+                        <div class="feature-section-item">
+                            Java
+                        </div>
+                        <div class="feature-section-item">
+                            NodeJS
+                        </div>
+                        <div class="feature-section-item">
+                            Scala
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -120,12 +122,13 @@
         }
     });
 
+
     let sectionsEles = document.querySelectorAll("section");
 
     let options = {
         root: null,
         rootMargin: "-100px",
-        // threshold: 1.0,
+        threshold: 0.5,
     };
 
     let headerLogoEle = document.querySelector(".header-logo");
@@ -148,6 +151,11 @@
 
     let callback = (entries, observer) => {
         entries.forEach((entry) => {
+            console.log(entry.target.classList)
+            if (entry.target.classList[0] == 'help-section' && entry.isIntersecting) {
+                console.log("triggereing")
+                triggerApiAnimation()
+            }
 
             if (entry.target.classList[0] == 'middle-container' && !entry.isIntersecting) {
                 logoSlideIn()
@@ -160,7 +168,34 @@
     }
 
     let observer = new IntersectionObserver(callback, options);
-    sectionsEles.forEach(sectionsEle => observer.observe(sectionsEle));
+    // sectionsEles.forEach(sectionsEle => observer.observe(sectionsEle));
+
+
+    let triggerApiAnimation = () => { }
+
+    const api_r = new rive.Rive({
+        src: "rive/api.riv",
+        autoplay: true,
+        canvas: document.getElementById("api-canvas"),
+        layout: new rive.Layout({
+            fit: rive.Fit.Cover,
+        }),
+        stateMachines: "State Machine 1",
+        useOffscreenRenderer: true,
+        onLoad: () => {
+            api_r.resizeDrawingSurfaceToCanvas();
+            const inputs = api_r.stateMachineInputs('State Machine 1');
+            const trigger = inputs.find(i => i.name === 'Trigger 1');
+
+            triggerApiAnimation = () => {
+                console.log('triggering')
+                trigger.fire()
+                console.log('fired')
+
+            }
+            sectionsEles.forEach(sectionsEle => observer.observe(sectionsEle));
+        }
+    });
 
 </script>
 

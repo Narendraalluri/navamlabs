@@ -139,8 +139,8 @@ canvas#logo-canvas {
     align-items: center;
     flex-direction: row;
     border-radius: 2rem;
-    background-color: lightblue;
-    border: 1px solid lightblue;
+    background-color: rgb(213, 228, 233);
+    border: 1px solid rgb(213, 228, 233);
 
 }
 
@@ -149,16 +149,30 @@ canvas#logo-canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.feature-section-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.feature-section-items {
+    margin-top: 3rem;
+}
+
+.feature-section-item {
+    margin-top: 1rem;
 }
 
 .help-section-canvas-container {
-    width: 50%;
+    /* width: 50%; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-right: 1px solid black;
+    /* border-right: 1px solid black; */
 }
 
 .help-section-icon {
@@ -284,4 +298,10 @@ canvas#logo-canvas {
 
 .header-logo-title {
     margin-left: 2rem;
+}
+
+canvas#api-canvas {
+
+    height: 400px;
+    width: 600px;
 }
