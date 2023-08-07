@@ -128,7 +128,7 @@ canvas#logo-canvas {
 
 .help-section {
     margin-top: 100vh;
-    width: 100%;
+    width: 50%;
 }
 
 .help-section-container {
@@ -141,15 +141,21 @@ canvas#logo-canvas {
     border-radius: 2rem;
     background-color: rgb(213, 228, 233);
     border: 1px solid rgb(213, 228, 233);
-
+    color: white;
+    overflow: hidden;
+    background: linear-gradient(rgb(72, 0, 72, 0.8), rgb(192, 72, 72, 0.8));
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .help-section-text-container {
-    width: 50%;
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+
 }
 
 .feature-section-title {
@@ -157,6 +163,28 @@ canvas#logo-canvas {
     font-weight: 700;
     line-height: 120%;
 }
+
+span {
+    opacity: 0;
+    filter: blur(4px);
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes scale {
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 .feature-section-items {
     margin-top: 3rem;
@@ -168,10 +196,12 @@ canvas#logo-canvas {
 
 .help-section-canvas-container {
     /* width: 50%; */
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
     /* border-right: 1px solid black; */
 }
 
@@ -249,7 +279,6 @@ canvas#logo-canvas {
     width: 20%;
     margin-left: 2rem;
     position: relative;
-    top: 3rem;
 }
 
 .header-actions {
@@ -276,6 +305,7 @@ canvas#logo-canvas {
     animation-fill-mode: forwards;
 }
 
+/* 
 @keyframes logoSlide {
     0% {
         top: 3rem;
@@ -294,14 +324,20 @@ canvas#logo-canvas {
     100% {
         top: 3rem;
     }
-}
+} */
 
 .header-logo-title {
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
 }
 
 canvas#api-canvas {
-
     height: 400px;
     width: 600px;
+    position: absolute;
+    opacity: 0.4;
+}
+
+canvas#logo-title-canvas {
+    height: 60px;
+    width: 220px;
 }
