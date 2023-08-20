@@ -113,39 +113,40 @@ canvas#logo-canvas {
 }
 
 
-
+.contact-section-details-text {
+    margin-left: .8rem;
+}
 
 
 .contact-section {
     height: 20rem;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: left;
     align-items: center;
-    background-color: lightcyan;
+    background-color: #4E42DD;
+    color: white;
 }
 
+.contact-section-details-item {
+    margin-top: .5rem;
+}
 
 .help-section {
     margin-top: 100vh;
-    width: 50%;
+    width: 100%;
 }
 
 .help-section-container {
+    position: relative;
     margin: 2rem;
-    display: flex;
+    padding: 1rem;
     height: 25rem;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    border-radius: 2rem;
-    background-color: rgb(213, 228, 233);
-    border: 1px solid rgb(213, 228, 233);
-    color: white;
+    background-color: #AC64C7;
     overflow: hidden;
-    background: linear-gradient(rgb(72, 0, 72, 0.8), rgb(192, 72, 72, 0.8));
-    background-size: cover;
-    background-repeat: no-repeat;
+    color: white;
+    width: 80%;
 }
 
 .help-section-text-container {
@@ -155,11 +156,13 @@ canvas#logo-canvas {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-
+    z-index: 1;
+    position: relative;
+    top: -80rem;
 }
 
 .feature-section-title {
-    font-size: 42px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 120%;
 }
@@ -185,24 +188,55 @@ span {
     }
 }
 
+.item-checkmark {
+    position: relative;
+    top: .3rem;
+    margin-right: .5rem;
+    display: inline-block;
+}
+
+.item-title {
+    display: inline-block;
+}
+
+.feature-section-item-divider {
+    width: 80%;
+    margin-left: 2rem;
+}
+
+.feature-section-item-divider-last {
+    margin-bottom: 1rem;
+}
+
+.background-rect-1 {
+    background-color: #F5D3D0;
+    width: 1.5rem;
+    height: 40rem;
+    opacity: .38;
+    transform: rotate(-33deg) translate(150px, 0px);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.background-rect-2 {
+    background-color: #DDE6FB;
+    width: 1.5rem;
+    height: 40rem;
+    opacity: .38;
+    transform: rotate(53deg) translate(-350px, -670px);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
 
 .feature-section-items {
-    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .feature-section-item {
+    width: 80%;
+    margin-left: 2rem;
     margin-top: 1rem;
-}
-
-.help-section-canvas-container {
-    /* width: 50%; */
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    /* border-right: 1px solid black; */
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .help-section-icon {
@@ -210,61 +244,29 @@ span {
     margin-bottom: .8rem;
 }
 
-
-.credentials-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.credentials-section-container {
-    margin: 2rem;
-    display: flex;
-    height: 25rem;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    border-radius: 2rem;
-    width: 100%;
-    background-color: lightskyblue;
-
-}
-
-.projects-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.projects-section-container {
-    margin: 2rem;
-    display: flex;
-    height: 25rem;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    border-radius: 2rem;
-    width: 100%;
-    background-color: lightblue;
-}
-
 .contact-section-container {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
+    margin-left: 2rem;
+}
+
+.contact-section-header {
+    font-size: 35px;
+    margin-bottom: 4rem;
+}
+
+.contact-section-header-2 {
+    font-size: 25px;
+    margin-bottom: 2rem;
 }
 
 .glass {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    /* border-radius: 20px; */
-    /* border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
 }
 
 .non-glass {
@@ -326,10 +328,6 @@ span {
     }
 } */
 
-.header-logo-title {
-    /* margin-left: 2rem; */
-}
-
 canvas#api-canvas {
     height: 400px;
     width: 600px;
@@ -340,4 +338,12 @@ canvas#api-canvas {
 canvas#logo-title-canvas {
     height: 60px;
     width: 220px;
+}
+
+.feature-section-items-container {
+    margin-top: 3rem;
+    background-color: white;
+    color: black;
+    width: 80%;
+    box-shadow: 1rem 1rem 0px #4E42DD;
 }
