@@ -163,10 +163,25 @@ canvas#logo-canvas {
 
 @media only screen and (min-width: 768px) {
     .help-section-container {
-        width: 30%;
+        width: 40%;
         margin: 2rem;
         padding: 1rem;
         height: 25rem;
+    }
+
+    .logo-canvas-container {
+        position: relative;
+        top: 0rem;
+    }
+
+    .main-title {
+        width: 65%;
+        font-weight: 800;
+        font-size: 2rem;
+        margin-left: 2rem;
+        position: relative;
+        top: 0rem;
+
     }
 
 }
@@ -201,6 +216,35 @@ canvas#logo-canvas {
 
     .logo-canvas-container {
         position: relative;
+        top: 0rem;
+    }
+
+    .main-title {
+        width: 65%;
+        font-weight: 800;
+        font-size: 2rem;
+        margin-left: 2rem;
+        position: relative;
+        top: 0rem;
+
+    }
+
+    .middle-container {
+        flex-direction: row;
+    }
+
+}
+
+@media only screen and (max-width: 568px) {
+
+    .feature-section-title {
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 120%;
+    }
+
+    .logo-canvas-container {
+        position: relative;
         top: -5rem;
     }
 
@@ -211,12 +255,8 @@ canvas#logo-canvas {
         margin-left: 2rem;
         position: relative;
         top: -5rem;
-
     }
 
-    .middle-container {
-        flex-direction: row;
-    }
 
 }
 
