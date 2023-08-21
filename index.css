@@ -161,6 +161,12 @@ canvas#logo-canvas {
     height: 80px;
 }
 
+.tech-item.spark img {
+    width: 150px;
+    height: 75px;
+}
+
+
 @media only screen and (min-width: 768px) {
     .help-section-container {
         width: 40%;
@@ -212,6 +218,11 @@ canvas#logo-canvas {
     .tech-item img {
         width: 50px;
         height: 50px;
+    }
+
+    .tech-item.spark img {
+        width: 120px;
+        height: 60px;
     }
 
     .logo-canvas-container {
@@ -278,6 +289,11 @@ canvas#logo-canvas {
 
     .tech-item img {
         width: 40px;
+        height: 40px;
+    }
+
+    .tech-item.spark img {
+        width: 80px;
         height: 40px;
     }
 
