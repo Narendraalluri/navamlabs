@@ -347,3 +347,16 @@ canvas#logo-title-canvas {
     width: 80%;
     box-shadow: 1rem 1rem 0px #4E42DD;
 }
+
+.tech-section-container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    background-color: #D3CCE7;
+    flex-wrap: wrap;
+}
+
+.tech-item {
+    margin: 1rem;
+}
