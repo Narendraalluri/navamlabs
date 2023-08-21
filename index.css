@@ -215,12 +215,12 @@ canvas#logo-canvas {
     }
 
     .middle-container {
-        flex-direction: column;
+        flex-direction: row;
     }
 
 }
 
-@media only screen and (max-width: 321px) {
+@media only screen and (max-width: 375px) {
     .help-section-container {
         width: 100%;
         margin: .5rem;
