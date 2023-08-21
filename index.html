@@ -30,7 +30,6 @@
     </section>
     <div class="layout">
         <section class="help-section">
-
             <div class="help-section-container">
                 <div class="background-rect-1"></div>
                 <div class="background-rect-2"></div>
@@ -271,6 +270,9 @@
             <div class="tech-item">
                 <img src="icons/tech/scala.svg" />
             </div>
+            <div class="tech-item">
+                <img src="icons/tech/gcp.svg" />
+            </div>
         </div>
 
     </section>
@@ -303,7 +305,7 @@
         <div class="header-logo">
             <div class="header-logo-title">
                 <!-- <img width="300px" height="50px" src="icons/top_title.svg"> -->
-                <canvas id="logo-title-canvas">
+                <canvas id="logo-title-canvas" />
             </div>
         </div>
         <!-- <div class="header-actions">
@@ -313,11 +315,9 @@
         </div> -->
     </section>
     <section class="middle-container">
-        <div class="">
-            <canvas id="logo-canvas">
-            </canvas>
+        <div class="logo-canvas-container">
+            <canvas id="logo-canvas" />
         </div>
-
         <div class="main-title">
             Empowering Businesses with Expert
             Consulting
@@ -333,7 +333,7 @@
         canvas: document.getElementById("canvas"),
         autoplay: true,
         layout: new rive.Layout({
-            fit: rive.Fit.Cover,
+            fit: rive.Fit.FitHeight,
         }),
         stateMachines: "State Machine 1",
         useOffscreenRenderer: true,
@@ -347,7 +347,7 @@
         canvas: document.getElementById("logo-canvas"),
         autoplay: true,
         layout: new rive.Layout({
-            fit: rive.Fit.Cover,
+            fit: rive.Fit.FitHeight,
         }),
         stateMachines: "initial",
         useOffscreenRenderer: true,
