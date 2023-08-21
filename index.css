@@ -183,7 +183,7 @@ canvas#logo-canvas {
     .main-title {
         width: 65%;
         font-weight: 800;
-        font-size: 2rem;
+        font-size: 3.5rem;
         margin-left: 2rem;
         position: relative;
         top: 0rem;
@@ -246,32 +246,14 @@ canvas#logo-canvas {
 
 }
 
-@media only screen and (max-width: 568px) {
-
-    .feature-section-title {
-        font-size: 19px;
-        font-weight: 700;
-        line-height: 120%;
-    }
-
-    .logo-canvas-container {
+@media only screen and (max-width: 414px) {
+    canvas#logo-canvas {
+        height: 100px;
+        width: 100px;
         position: relative;
-        top: -5rem;
+        left: 6rem;
     }
 
-    .main-title {
-        width: 65%;
-        font-weight: 800;
-        font-size: 2rem;
-        margin-left: 2rem;
-        position: relative;
-        top: -5rem;
-    }
-
-
-}
-
-@media only screen and (max-width: 375px) {
     .help-section-container {
         width: 100%;
         margin: .5rem;
@@ -317,11 +299,56 @@ canvas#logo-canvas {
     }
 }
 
+
+@media only screen and (max-width: 568px)and (min-width: 414px) {
+
+    canvas#logo-canvas {
+        height: 100px;
+        width: 100px;
+        position: relative;
+        left: 10rem;
+    }
+
+    .feature-section-title {
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 120%;
+    }
+
+    .logo-canvas-container {
+        position: relative;
+        top: -5rem;
+    }
+
+    .main-title {
+        width: 100%;
+        font-weight: 800;
+        font-size: 1.7rem;
+        margin-left: 2rem;
+        position: relative;
+        top: -2rem;
+    }
+
+
+}
+
 .help-section-container {
     position: relative;
     background-color: #AC64C7;
     overflow: hidden;
     color: white;
+}
+
+.help-section-container.item-2 {
+    background-color: #0093B4;
+}
+
+.help-section-container.item-3 {
+    background-color: #C76488;
+}
+
+.help-section-container.item-4 {
+    background-color: #C78864;
 }
 
 .help-section-text-container {
@@ -393,6 +420,30 @@ span {
     opacity: .38;
     transform: rotate(53deg) translate(-350px, -670px);
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.background-rect-1.item-2 {
+    transform: rotate(-78deg) translate(50px, 250px);
+}
+
+.background-rect-2.item-2 {
+    transform: rotate(60deg) translate(-400px, -570px);
+}
+
+.background-rect-1.item-3 {
+    transform: rotate(-38deg) translate(100px, 100px);
+}
+
+.background-rect-2.item-3 {
+    transform: rotate(60deg) translate(-400px, -570px);
+}
+
+.background-rect-1.item-4 {
+    transform: rotate(-98deg) translate(100px, 100px);
+}
+
+.background-rect-2.item-4 {
+    transform: rotate(60deg) translate(-400px, -570px);
 }
 
 .feature-section-items {
