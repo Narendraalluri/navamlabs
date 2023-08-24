@@ -249,6 +249,7 @@ canvas#logo-canvas {
     .help-section-container {
         width: 100%;
         margin: .5rem;
+        height: 25rem;
     }
 
     .feature-section-items-container {
@@ -751,3 +752,5 @@ canvas#logo-title-canvas {
 
     }
 }
+
+@media only screen and (max-width: 414px) {}
