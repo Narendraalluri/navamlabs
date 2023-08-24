@@ -37,17 +37,7 @@ canvas#canvas {
 
 }
 
-.top-container {
-    position: fixed;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    z-index: 2;
-    overflow: hidden;
 
-}
 
 .middle-container {
     position: absolute;
@@ -637,6 +627,55 @@ canvas#logo-title-canvas {
 .check-mark.feat-3.start-reveal {
     animation: popup 1s 1.6s forwards;
     animation-timing-function: cubic-bezier(.05, .8, .1, .95)
+}
+
+.tech-icon {
+    scale: .8;
+}
+
+.tech-icon.start-reveal {
+    animation: popup-icon 1s forwards;
+    animation-timing-function: cubic-bezier(.05, .8, .1, .95)
+}
+
+
+.top-container {
+    position: fixed;
+    top: -10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.top-container.start-reveal {
+    animation: popup-header 1s forwards;
+    animation-timing-function: cubic-bezier(.05, .8, .1, .95)
+}
+
+@keyframes popup-header {
+    0% {
+        top: -10rem;
+    }
+
+    100% {
+        top: 0rem;
+    }
+}
+
+
+@keyframes popup-icon {
+    0% {
+        scale: .1;
+        transform: translateX(0%) translateY(0%);
+    }
+
+    100% {
+        scale: 1;
+        transform: translateX(10%) translateY(20%);
+    }
 }
 
 @keyframes popup {

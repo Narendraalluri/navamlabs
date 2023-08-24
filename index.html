@@ -232,46 +232,46 @@
     <section class="tech-section">
         <div class="tech-section-container">
             <div class="tech-item">
-                <img src="icons/tech/java.svg" />
+                <img class="tech-icon tech-1" src="icons/tech/java.svg" />
             </div>
             <div class="tech-item">
-                <img src="icons/tech/spring.svg" />
+                <img class="tech-icon tech-2" src="icons/tech/spring.svg" />
             </div>
             <div class="tech-item">
-                <img src="icons/tech/react.svg" />
+                <img class="tech-icon tech-3" src="icons/tech/react.svg" />
             </div>
             <div class="tech-item">
-                <img src="icons/tech/js.svg" />
+                <img class="tech-icon tech-4" src="icons/tech/js.svg" />
             </div>
             <div class="tech-item">
-                <img src="icons/tech/mongo.svg" />
+                <img class="tech-icon tech-5" src="icons/tech/mongo.svg" />
             </div>
             <div class="tech-item spark">
-                <img src="icons/tech/spark.svg" />
+                <img class="tech-icon tech-6" src="icons/tech/spark.svg" />
             </div>
             <div class="tech-item">
-                <img src="icons/tech/aws.svg" />
+                <img class="tech-icon tech-7" src="icons/tech/aws.svg" />
             </div>
             <div class="tech-item">
-                <img src="icons/tech/pytorch.svg" />
+                <img class="tech-icon tech-8" src="icons/tech/pytorch.svg" />
             </div>
             <div class="tech-item">
-                <img src="icons/tech/html5.svg" />
+                <img class="tech-icon tech-9" src="icons/tech/html5.svg" />
             </div>
             <div class="tech-item">
-                <img src="icons/tech/angularjs.svg" />
+                <img class="tech-icon tech-10" src="icons/tech/angularjs.svg" />
             </div>
             <div class="tech-item">
-                <img src="icons/tech/kubernetes.svg" />
+                <img class="tech-icon tech-11" src="icons/tech/kubernetes.svg" />
             </div>
             <div class="tech-item">
-                <img src="icons/tech/docker.svg" />
+                <img class="tech-icon tech-12" src="icons/tech/docker.svg" />
             </div>
             <div class="tech-item">
-                <img src="icons/tech/scala.svg" />
+                <img class="tech-icon tech-13" src="icons/tech/scala.svg" />
             </div>
             <div class="tech-item">
-                <img src="icons/tech/gcp.svg" />
+                <img class="tech-icon tech-14" src="icons/tech/gcp.svg" />
             </div>
         </div>
 
@@ -304,15 +304,9 @@
     <section class="top-container non-glass">
         <div class="header-logo">
             <div class="header-logo-title">
-                <!-- <img width="300px" height="50px" src="icons/top_title.svg"> -->
                 <canvas id="logo-title-canvas" />
             </div>
         </div>
-        <!-- <div class="header-actions">
-            <div>About us</div>
-            <div>Projects</div>
-            <div>Contact</div>
-        </div> -->
     </section>
     <section class="middle-container">
         <div class="logo-canvas-container">
@@ -381,6 +375,7 @@
         entries.forEach((entry) => {
             if (entry.isIntersecting && entry.target.classList.contains('item-1') && !entry.target.classList.contains('start-reveal-left')) {
                 entry.target.classList.add('start-reveal-left')
+
             }
             if (entry.isIntersecting && entry.target.classList.contains('item-2') && !entry.target.classList.contains('start-reveal-right')) {
                 entry.target.classList.add('start-reveal-right')
@@ -410,26 +405,47 @@
     let observer = new IntersectionObserver(callback, {});
     techCards.forEach(sectionsEle => observer.observe(sectionsEle));
 
-    let techCardsInner = document.querySelectorAll(".feature-section-item,.check-mark,.feature-section-items-container,.feature-section-items");
+    let techCardsInner = document.querySelectorAll(".tech-icon,.feature-section-item,.check-mark,.feature-section-items-container,.feature-section-items");
     let observerInnerCards = new IntersectionObserver(callbackInnerCards, {});
     techCardsInner.forEach(sectionsEle => observerInnerCards.observe(sectionsEle));
 
 
+    let callbackMainTitle = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting && !topContainerEle.classList.contains('start-reveal')) {
+                topContainerEle.classList.add('start-reveal');
+
+                const logo_title_r = new rive.Rive({
+                    src: "rive/logotitle.riv",
+                    autoplay: true,
+                    canvas: document.getElementById("logo-title-canvas"),
+                    layout: new rive.Layout({
+                        fit: rive.Fit.Cover,
+                    }),
+                    stateMachines: "State Machine 1",
+                    useOffscreenRenderer: true,
+                    onLoad: () => {
+                        r1.resizeDrawingSurfaceToCanvas();
+                    }
+                });
+            }
+            if (entry.isIntersecting && topContainerEle.classList.contains('start-reveal')) {
+                topContainerEle.classList.remove('start-reveal');
+
+            }
+        });
+    }
+
+    let maintitle = document.querySelectorAll(".main-title");
+    let observerMaintitle = new IntersectionObserver(callbackMainTitle, {});
+    maintitle.forEach(sectionsEle => observerMaintitle.observe(sectionsEle));
+
+
+
+
+
     let triggerApiAnimation = () => { }
 
-    const logo_title_r = new rive.Rive({
-        src: "rive/logotitle.riv",
-        autoplay: true,
-        canvas: document.getElementById("logo-title-canvas"),
-        layout: new rive.Layout({
-            fit: rive.Fit.Cover,
-        }),
-        stateMachines: "State Machine 1",
-        useOffscreenRenderer: true,
-        onLoad: () => {
-            r1.resizeDrawingSurfaceToCanvas();
-        }
-    });
 
 </script>
 
