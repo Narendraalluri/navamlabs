@@ -146,8 +146,10 @@ canvas#logo-canvas {
     background-color: white;
     color: black;
     width: 80%;
-    box-shadow: 1rem 1rem 0px #4E42DD;
 }
+
+
+
 
 
 .feature-section-title {
@@ -334,9 +336,12 @@ canvas#logo-canvas {
 
 .help-section-container {
     position: relative;
-    background-color: #AC64C7;
     overflow: hidden;
     color: white;
+}
+
+.help-section-container.item-1 {
+    background-color: #AC64C7;
 }
 
 .help-section-container.item-2 {
@@ -451,12 +456,15 @@ span {
     flex-direction: column;
 }
 
+
+
 .feature-section-item {
     width: 80%;
     margin-left: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: 500;
+    opacity: .5;
 }
 
 .help-section-icon {
@@ -574,4 +582,133 @@ canvas#logo-title-canvas {
 
 .tech-item {
     margin: 1rem;
+}
+
+.help-section-container.start-reveal-left {
+    animation: reveal-frame-left 1s;
+    animation-timing-function: cubic-bezier(.05, .8, .1, .95)
+}
+
+.help-section-container.start-reveal-right {
+    animation: reveal-frame-right 2s;
+    animation-timing-function: cubic-bezier(.05, .8, .1, .95)
+}
+
+.feature-section-items.start-reveal::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    color: black;
+    z-index: -1;
+    width: 80%;
+    height: 13;
+    background: #4E42DD;
+    animation: reveal-background .5s 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.05, .8, .1, .95)
+}
+
+.feature-section-items-container.start-reveal {
+    animation: push-top 1s 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.05, .8, .1, .95)
+}
+
+.feature-section-item.start-reveal {
+    animation: text-highlight 1s 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.05, .8, .1, .95)
+}
+
+.check-mark {
+    scale: 0;
+}
+
+.check-mark.feat-1.start-reveal {
+    animation: popup 1s 1s forwards;
+    animation-timing-function: cubic-bezier(.05, .8, .1, .95)
+}
+
+.check-mark.feat-2.start-reveal {
+    animation: popup 1s 1.3s forwards;
+    animation-timing-function: cubic-bezier(.05, .8, .1, .95)
+}
+
+.check-mark.feat-3.start-reveal {
+    animation: popup 1s 1.6s forwards;
+    animation-timing-function: cubic-bezier(.05, .8, .1, .95)
+}
+
+@keyframes popup {
+    0% {
+        scale: .1;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+@keyframes text-highlight {
+    0% {
+
+        font-weight: 500;
+    }
+
+    100% {
+        opacity: 1;
+        font-weight: 600;
+    }
+}
+
+@keyframes push-top {
+    0% {
+        margin-top: 3rem;
+        margin-left: 0;
+        width: 80%;
+    }
+
+    100% {
+        margin-left: -1rem;
+        width: 83%;
+    }
+}
+
+@keyframes reveal-background {
+    0% {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    100% {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        width: 84%;
+        height: 14.5rem;
+    }
+}
+
+@keyframes reveal-frame-left {
+    0% {
+        opacity: .5;
+        transform: translateX(-20%) translateY(20%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%) translateY(0%);
+    }
+}
+
+@keyframes reveal-frame-right {
+    0% {
+        opacity: .5;
+        transform: translateX(20%) translateY(20%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%) translateY(0%);
+
+    }
 }
