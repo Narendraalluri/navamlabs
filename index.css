@@ -652,7 +652,7 @@ canvas#logo-title-canvas {
 
 .top-container.start-reveal {
     animation: popup-header 1s forwards;
-    animation-timing-function: cubic-bezier(.05, .8, .1, .95)
+    animation-timing-function: cubic-bezier(.05, .8, .1, .95);
 }
 
 @keyframes popup-header {
